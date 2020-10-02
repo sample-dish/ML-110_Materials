@@ -30,40 +30,19 @@ flags.DEFINE_string('img_path', '', 'Path to images')
 
 #multiple label training
 flags.DEFINE_string('label1', '', 'Name of class[1] label')
-flags.DEFINE_string('label2', '', 'Name of class[2] label')
-flags.DEFINE_string('label3', '', 'Name of class[3] label')
-flags.DEFINE_string('label4', '', 'Name of class[4] label')
-flags.DEFINE_string('label5', '', 'Name of class[5] label')
-flags.DEFINE_string('label6', '', 'Name of class[6] label')
 
 FLAGS = flags.FLAGS
-
 
 # for multiple labels add more else if statements
 def class_text_to_int(row_label):
     print('row_label=', row_label)
     print('FLAGS.label1=', FLAGS.label1)
-    print('FLAGS.label2=', FLAGS.label2)
-    print('FLAGS.label3=', FLAGS.label3)
-    print('FLAGS.label4=', FLAGS.label4)
-    print('FLAGS.label5=', FLAGS.label5)
-    print('FLAGS.label6=', FLAGS.label6)
 
     #if row_label == FLAGS.label:  # 'ship':
     #    return 1
     # comment upper if statement and uncomment these statements for multiple labelling
     if row_label == FLAGS.label1:
        return 1
-    elif row_label == FLAGS.label2:
-       return 2
-    elif row_label == FLAGS.label3:
-       return 3
-    elif row_label == FLAGS.label4:
-       return 4
-    elif row_label == FLAGS.label5:
-       return 5
-    elif row_label == FLAGS.label6:
-       return 6
     else:
         None  #throw error if no label (string will not work for int return)
 def split(df, group):
